@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>ToDo List</h1>
+  {% for task in tasks %}
+    <h4><span class="text-muted fs-6">You need to: </span> {{ task.content }}</h4>
+    <h6><small class="text-muted">Status:</small>
+    {% if task.status %}
+      <div class="border border-success text-success p-1 mb-1 rounded d-inline-block">Done</div>
+    {% else %}
+      <div class="border border-danger text-danger p-1 mb-1 rounded d-inline-block">Not Done</div>
+    {% endif %}
+    </h6>
+    <h6><small class="text-muted">Created:</small> {{ task.datetime }}</h6>
+    <h6><small class="text-muted">Deadline:</small> {{ task.expiration_datetime }}</h6>
+    {% if task.tags.count == 0 %}
+      <h6><small class="text-muted">Tags:</small> Need Add Tags</h6>
+    {% else %}
+      <h6><small class="text-muted">Tags:</small>
+        {% for tag in task.tags %}
+        	{{ tag }}
+        {% endfor %}
+        {{ task.tags }}</h6>
+    {% endif %}
+
+    <hr>
+  {% endfor%}
+{% endblock %}
