@@ -22,12 +22,12 @@ from task_manager.views import TaskListView, TaskCreateView, TaskUpdateView, Tas
 urlpatterns = [
     path("", TaskListView.as_view(), name="task-list"),
     path("task/create/", TaskCreateView.as_view(), name="task-create"),
-    path("task/update/", TaskUpdateView.as_view(), name="task-update"),
-    path("task/delete/", TaskDeleteView.as_view(), name="task-delete"),
+    path("task/update/<int:pk>/", TaskUpdateView.as_view(), name="task-update"),
+    path("task/delete/<int:pk>/", TaskDeleteView.as_view(), name="task-delete"),
     path("tag/list/", TagListView.as_view(), name="tag-list"),
     path("tag/create/", TagCreateView.as_view(), name="tag-create"),
-    path("tag/update/", TagUpdateView.as_view(), name="tag-update"),
-    path("tag/delete/", TagDeleteView.as_view(), name="tag-delete"),
+    path("tag/update/<int:pk>/", TagUpdateView.as_view(), name="tag-update"),
+    path("tag/delete/<int:pk>/", TagDeleteView.as_view(), name="tag-delete"),
 ]
 
 

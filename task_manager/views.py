@@ -20,6 +20,7 @@ class TaskCreateView(CreateView):
 
 class TaskUpdateView(UpdateView):
     model = Task
+    fields = "__all__"
     success_url = reverse_lazy("task_manager:task-list")
 
 
@@ -41,6 +42,7 @@ class TagCreateView(CreateView):
 
 class TagUpdateView(UpdateView):
     model = Tag
+    fields = "__all__"
     success_url = reverse_lazy("task_manager:tag-list")
 
 class TagDeleteView(DeleteView):
