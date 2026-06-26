@@ -18,10 +18,12 @@
     {% else %}
       <h6><small class="text-muted">Tags:</small>
         {% for tag in task.tags.all %}
-        	{{ tag }},
+        	{{ tag }}{% if not forloop.last %}, {% endif %}
         {% endfor %}
-        {{ task.tags }}</h6>
+        </h6>
     {% endif %}
+    <a href="{% url "task_manager:task-update" pk=task.id %}" class="btn btn-secondary">Update</a>
+    <a href="{% url "task_manager:task-delete" pk=task.id %}" class="btn btn-danger">Delete</a>
 
     <hr>
   {% endfor%}
