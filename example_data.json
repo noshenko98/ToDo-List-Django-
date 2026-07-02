@@ -1,0 +1,319 @@
+[
+  {
+    "model": "task_manager.tag",
+    "pk": 1,
+    "fields": {
+      "name": "Work"
+    }
+  },
+  {
+    "model": "task_manager.tag",
+    "pk": 2,
+    "fields": {
+      "name": "Personal"
+    }
+  },
+  {
+    "model": "task_manager.tag",
+    "pk": 3,
+    "fields": {
+      "name": "Education"
+    }
+  },
+  {
+    "model": "task_manager.tag",
+    "pk": 4,
+    "fields": {
+      "name": "Health"
+    }
+  },
+  {
+    "model": "task_manager.tag",
+    "pk": 5,
+    "fields": {
+      "name": "Finance"
+    }
+  },
+  {
+    "model": "task_manager.tag",
+    "pk": 6,
+    "fields": {
+      "name": "Urgent"
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 1,
+    "fields": {
+      "content": "Prepare weekly project status report for the management team.",
+      "datetime": "2026-07-02T12:00:00Z",
+      "expiration_datetime": "2026-07-03T12:00:00Z",
+      "status": false,
+      "tags": [1, 6]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 2,
+    "fields": {
+      "content": "Buy groceries: milk, whole wheat bread, chicken breast, and avocados.",
+      "datetime": "2026-07-02T12:00:00Z",
+      "expiration_datetime": null,
+      "status": true,
+      "tags": [2]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 3,
+    "fields": {
+      "content": "Watch Django Rest Framework advanced tutorial and take detailed notes.",
+      "datetime": "2026-07-01T12:00:00Z",
+      "expiration_datetime": "2026-07-04T12:00:00Z",
+      "status": false,
+      "tags": [3]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 4,
+    "fields": {
+      "content": "Schedule annual physical examination with the family doctor.",
+      "datetime": "2026-06-30T12:00:00Z",
+      "expiration_datetime": "2026-07-07T12:00:00Z",
+      "status": false,
+      "tags": [4]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 5,
+    "fields": {
+      "content": "Review monthly bank statements and update the personal budget spreadsheet.",
+      "datetime": "2026-07-01T12:00:00Z",
+      "expiration_datetime": "2026-07-03T12:00:00Z",
+      "status": true,
+      "tags": [5]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 6,
+    "fields": {
+      "content": "Fix the leaking faucet in the kitchen or call a plumber.",
+      "datetime": "2026-06-29T12:00:00Z",
+      "expiration_datetime": "2026-06-30T12:00:00Z",
+      "status": true,
+      "tags": [2]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 7,
+    "fields": {
+      "content": "Submit quarterly tax declaration documents to the financial department.",
+      "datetime": "2026-07-02T12:00:00Z",
+      "expiration_datetime": "2026-07-04T12:00:00Z",
+      "status": false,
+      "tags": [1, 5, 6]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 8,
+    "fields": {
+      "content": "Complete LeetCode daily challenge to practice data structures.",
+      "datetime": "2026-07-02T12:00:00Z",
+      "expiration_datetime": "2026-07-02T12:00:00Z",
+      "status": false,
+      "tags": [3]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 9,
+    "fields": {
+      "content": "Go for a 5km evening run in the local park.",
+      "datetime": "2026-07-02T12:00:00Z",
+      "expiration_datetime": null,
+      "status": false,
+      "tags": [4]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 10,
+    "fields": {
+      "content": "Plan the weekend road trip itinerary and book accommodation.",
+      "datetime": "2026-06-28T12:00:00Z",
+      "expiration_datetime": null,
+      "status": true,
+      "tags": [2]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 11,
+    "fields": {
+      "content": "Update resume and LinkedIn profile with recent achievements.",
+      "datetime": "2026-06-27T12:00:00Z",
+      "expiration_datetime": "2026-07-02T12:00:00Z",
+      "status": false,
+      "tags": [1, 3]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 12,
+    "fields": {
+      "content": "Pay the electricity and internet broadband utility bills.",
+      "datetime": "2026-07-01T12:00:00Z",
+      "expiration_datetime": "2026-07-02T12:00:00Z",
+      "status": true,
+      "tags": [2, 5]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 13,
+    "fields": {
+      "content": "Read two chapters of 'Designing Data-Intensive Applications'.",
+      "datetime": "2026-06-30T12:00:00Z",
+      "expiration_datetime": "2026-07-04T12:00:00Z",
+      "status": false,
+      "tags": [3]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 14,
+    "fields": {
+      "content": "Conduct a team sync meeting to discuss sprint planning goals.",
+      "datetime": "2026-07-02T12:00:00Z",
+      "expiration_datetime": "2026-07-02T12:00:00Z",
+      "status": true,
+      "tags": [1]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 15,
+    "fields": {
+      "content": "Clean the apartment: vacuum floors, dust shelves, and wash dishes.",
+      "datetime": "2026-07-01T12:00:00Z",
+      "expiration_datetime": null,
+      "status": true,
+      "tags": [2]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 16,
+    "fields": {
+      "content": "Refactor the legacy authentication module in the main repository.",
+      "datetime": "2026-06-29T12:00:00Z",
+      "expiration_datetime": "2026-07-03T12:00:00Z",
+      "status": false,
+      "tags": [1]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 17,
+    "fields": {
+      "content": "Cancel the gym membership subscription trial before it renews.",
+      "datetime": "2026-07-01T12:00:00Z",
+      "expiration_datetime": "2026-07-01T12:00:00Z",
+      "status": false,
+      "tags": [2, 5, 6]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 18,
+    "fields": {
+      "content": "Buy a birthday present for a close friend and write a card.",
+      "datetime": "2026-06-30T12:00:00Z",
+      "expiration_datetime": "2026-07-03T12:00:00Z",
+      "status": false,
+      "tags": [2]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 19,
+    "fields": {
+      "content": "Attend the technical webinar on cloud architecture best practices.",
+      "datetime": "2026-07-02T12:00:00Z",
+      "expiration_datetime": "2026-07-02T12:00:00Z",
+      "status": false,
+      "tags": [1, 3]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 20,
+    "fields": {
+      "content": "Water the indoor plants and add fertilizer to the soil.",
+      "datetime": "2026-06-28T12:00:00Z",
+      "expiration_datetime": null,
+      "status": true,
+      "tags": [2]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 21,
+    "fields": {
+      "content": "Backup local databases and configuration files to external hard drive.",
+      "datetime": "2026-07-01T12:00:00Z",
+      "expiration_datetime": "2026-07-02T12:00:00Z",
+      "status": false,
+      "tags": [1]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 22,
+    "fields": {
+      "content": "Research alternative car insurance policies for better coverage rates.",
+      "datetime": "2026-06-26T12:00:00Z",
+      "expiration_datetime": "2026-07-06T12:00:00Z",
+      "status": false,
+      "tags": [5]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 23,
+    "fields": {
+      "content": "Prepare interview questions for the upcoming junior developer position.",
+      "datetime": "2026-06-30T12:00:00Z",
+      "expiration_datetime": "2026-07-02T12:00:00Z",
+      "status": true,
+      "tags": [1]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 24,
+    "fields": {
+      "content": "Order new ergonomic office chair to improve workspace comfort.",
+      "datetime": "2026-07-01T12:00:00Z",
+      "expiration_datetime": null,
+      "status": false,
+      "tags": [1, 2]
+    }
+  },
+  {
+    "model": "task_manager.task",
+    "pk": 25,
+    "fields": {
+      "content": "Call parents to catch up over the weekend.",
+      "datetime": "2026-07-02T12:00:00Z",
+      "expiration_datetime": null,
+      "status": false,
+      "tags": [2]
+    }
+  }
+]
