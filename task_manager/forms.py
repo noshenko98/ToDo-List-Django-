@@ -15,3 +15,11 @@ class TaskCreateForm(forms.ModelForm):
                 }
             ),
         }
+
+class TagUpdateForTaskForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ["tags"]
+        widgets = {
+            "tags": forms.CheckboxSelectMultiple(),
+        }

@@ -17,7 +17,7 @@ Including another URLconf
 from django.urls import path, include
 
 from task_manager.views import TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TagListView, TagCreateView, \
-    TagUpdateView, TagDeleteView
+    TagUpdateView, TagDeleteView, TagUpdateForTaskView, ChangeStatusTaskView
 
 urlpatterns = [
     path("", TaskListView.as_view(), name="task-list"),
@@ -28,6 +28,8 @@ urlpatterns = [
     path("tag/create/", TagCreateView.as_view(), name="tag-create"),
     path("tag/update/<int:pk>/", TagUpdateView.as_view(), name="tag-update"),
     path("tag/delete/<int:pk>/", TagDeleteView.as_view(), name="tag-delete"),
+    path("task/update-tag/<int:pk>/", TagUpdateForTaskView.as_view(), name="task-update-tag"),
+    path("task/update-status/<int:pk>/<str:status>/", ChangeStatusTaskView.as_view(), name="task-update-status"),
 ]
 
 
