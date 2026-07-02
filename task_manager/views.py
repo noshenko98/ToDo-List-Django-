@@ -1,10 +1,13 @@
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import (ListView,
+                                  CreateView,
+                                  UpdateView,
+                                  DeleteView)
 
-from task_manager.forms import TaskCreateForm, TagUpdateForTaskForm
+from task_manager.forms import (TaskCreateForm,
+                                TagUpdateForTaskForm)
 from task_manager.models import Tag, Task
 
 
@@ -38,15 +41,18 @@ class TagListView(ListView):
     paginate_by = 10
     template_name = "task_manager/tag_list.html"
 
+
 class TagCreateView(CreateView):
     model = Tag
     fields = "__all__"
     success_url = reverse_lazy("task_manager:tag-list")
 
+
 class TagUpdateView(UpdateView):
     model = Tag
     fields = "__all__"
     success_url = reverse_lazy("task_manager:tag-list")
+
 
 class TagDeleteView(DeleteView):
     model = Tag
@@ -71,4 +77,5 @@ class ChangeStatusTaskView(View):
             task.status = False
         task.save()
         print(Task.objects.get(id=kwargs["pk"]).status)
-        return HttpResponseRedirect(reverse_lazy("task_manager:task-list"))
+        return HttpResponseRedirect(reverse_lazy(
+            "task_manager:task-list"))

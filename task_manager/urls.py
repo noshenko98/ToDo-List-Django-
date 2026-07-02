@@ -16,20 +16,38 @@ Including another URLconf
 """
 from django.urls import path, include
 
-from task_manager.views import TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TagListView, TagCreateView, \
-    TagUpdateView, TagDeleteView, TagUpdateForTaskView, ChangeStatusTaskView
+from task_manager.views import (TaskListView,
+                                TaskCreateView,
+                                TaskUpdateView,
+                                TaskDeleteView,
+                                TagListView,
+                                TagCreateView,
+                                TagUpdateView,
+                                TagDeleteView,
+                                TagUpdateForTaskView,
+                                ChangeStatusTaskView)
 
 urlpatterns = [
     path("", TaskListView.as_view(), name="task-list"),
-    path("task/create/", TaskCreateView.as_view(), name="task-create"),
-    path("task/update/<int:pk>/", TaskUpdateView.as_view(), name="task-update"),
-    path("task/delete/<int:pk>/", TaskDeleteView.as_view(), name="task-delete"),
-    path("tag/list/", TagListView.as_view(), name="tag-list"),
-    path("tag/create/", TagCreateView.as_view(), name="tag-create"),
-    path("tag/update/<int:pk>/", TagUpdateView.as_view(), name="tag-update"),
-    path("tag/delete/<int:pk>/", TagDeleteView.as_view(), name="tag-delete"),
-    path("task/update-tag/<int:pk>/", TagUpdateForTaskView.as_view(), name="task-update-tag"),
-    path("task/update-status/<int:pk>/<str:status>/", ChangeStatusTaskView.as_view(), name="task-update-status"),
+    path("task/create/", TaskCreateView.as_view(),
+         name="task-create"),
+    path("task/update/<int:pk>/", TaskUpdateView.as_view(),
+         name="task-update"),
+    path("task/delete/<int:pk>/", TaskDeleteView.as_view(),
+         name="task-delete"),
+    path("tag/list/", TagListView.as_view(),
+         name="tag-list"),
+    path("tag/create/", TagCreateView.as_view(),
+         name="tag-create"),
+    path("tag/update/<int:pk>/", TagUpdateView.as_view(),
+         name="tag-update"),
+    path("tag/delete/<int:pk>/", TagDeleteView.as_view(),
+         name="tag-delete"),
+    path("task/update-tag/<int:pk>/", TagUpdateForTaskView.as_view(),
+         name="task-update-tag"),
+    path("task/update-status/<int:pk>/<str:status>/",
+         ChangeStatusTaskView.as_view(),
+         name="task-update-status"),
 ]
 
 
