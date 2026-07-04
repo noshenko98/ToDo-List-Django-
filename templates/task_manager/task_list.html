@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="d-flex justify-content-between align-items-center">ToDo List
+  <a href="{% url "task_manager:task-create" %}" class="btn btn-primary">Add</a></h1>
+  {% for task in tasks %}
+    <h4><span class="text-muted fs-6">You need to: </span> {{ task.content }}</h4>
+    <div class="d-flex align-items-center row-gap-2 flex-wrap">
+      <h6><small class="text-muted">Status:</small>
+        {% if task.status %}
+          <div class="border border-success text-success p-1 mb-1 rounded d-inline-block">Done</div>
+        {% else %}
+          <div class="border border-danger text-danger p-1 mb-1 rounded d-inline-block">Not Done</div>
+        {% endif %}
+      </h6>
+      <div class="ms-auto">
+        {% if task.status %}
+          <form action="{% url "task_manager:task-update-status"  pk=task.id status="undo" %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-secondary">Undo</button>
+          </form>
+          {% else %}
+          <form action="{% url "task_manager:task-update-status" pk=task.id status="done" %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">Complete</button>
+          </form>
+        {% endif %}
+      </div>
+    </div>
+
+    <h6><small class="text-muted">Created:</small> {{ task.datetime }}</h6>
+    <h6><small class="text-muted">Deadline:</small> {{ task.expiration_datetime }}</h6>
+    {% if task.tags.count == 0 %}
+      <h6><small class="text-muted">Tags:</small> Need Add Tags
+      <a href="{% url "task_manager:task-update-tag" pk=task.id %}" class="btn btn-primary d-inline-block">+Tags</a>
+      </h6>
+
+    {% else %}
+      <h6><small class="text-muted">Tags:</small>
+        {% for tag in task.tags.all %}
+        	{{ tag }}{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+        <a href="{% url "task_manager:task-update-tag" pk=task.id %}" class="btn btn-primary">⟳ Tags</a>
+        </h6>
+    {% endif %}
+    <a href="{% url "task_manager:task-update" pk=task.id %}" class="btn btn-secondary">Update</a>
+    <a href="{% url "task_manager:task-delete" pk=task.id %}" class="btn btn-danger">Delete</a>
+
+
+
+    <hr>
+  {% endfor%}
+{% endblock %}
