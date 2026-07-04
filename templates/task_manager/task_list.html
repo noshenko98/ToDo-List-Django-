@@ -14,9 +14,15 @@
       </h6>
       <div class="ms-auto">
         {% if task.status %}
-          <a href="{% url "task_manager:task-update-status"  pk=task.id status="undo" %}" class="btn btn-secondary">Undo</a>
-        {% else %}
-          <a href="{% url "task_manager:task-update-status" pk=task.id status="done" %}" class="btn btn-success">Complete</a>
+          <form action="{% url "task_manager:task-update-status"  pk=task.id status="undo" %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-secondary">Undo</button>
+          </form>
+          {% else %}
+          <form action="{% url "task_manager:task-update-status" pk=task.id status="done" %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">Complete</button>
+          </form>
         {% endif %}
       </div>
     </div>

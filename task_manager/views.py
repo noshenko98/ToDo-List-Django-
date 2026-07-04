@@ -68,7 +68,7 @@ class TagUpdateForTaskView(UpdateView):
 class ChangeStatusTaskView(View):
     model = Task
 
-    def get(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         if kwargs["status"] == "done":
             task = Task.objects.get(id=kwargs["pk"])
             task.status = True
@@ -76,6 +76,5 @@ class ChangeStatusTaskView(View):
             task = Task.objects.get(id=kwargs["pk"])
             task.status = False
         task.save()
-        print(Task.objects.get(id=kwargs["pk"]).status)
         return HttpResponseRedirect(reverse_lazy(
             "task_manager:task-list"))
